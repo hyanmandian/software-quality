@@ -5,6 +5,8 @@ import DependencyInjection.Database.Providers.PostgreSQL;
 
 public class DatabaseFactory {
     
+    private DatabaseFactory() {}
+
     static private Database create(Provider provider) {
         return new Database(provider);
     }
