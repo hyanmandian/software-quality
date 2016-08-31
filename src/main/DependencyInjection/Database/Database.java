@@ -8,8 +8,12 @@ public class Database {
         this.database = database;
     }
     
-    public void connect() {
-        this.database.connect();
+    public String connect() {
+        return this.database.connect();
+    }
+    
+    public Provider getProvider() {
+        return this.database;
     }
     
 }

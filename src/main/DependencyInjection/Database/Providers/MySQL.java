@@ -4,8 +4,8 @@ import DependencyInjection.Database.Provider;
 
 public class MySQL implements Provider {
     
-    public void connect() {
-        System.err.println("Connect in MySQL.");
+    public String connect() {
+        return "Connect in MySQL.";
     }
     
 }

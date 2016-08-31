@@ -2,6 +2,6 @@ package DependencyInjection.Database;
 
 public interface Provider {
     
-    void connect();
+    String connect();
     
 }
