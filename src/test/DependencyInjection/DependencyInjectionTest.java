@@ -10,14 +10,14 @@ import static org.junit.Assert.*;
 public class DependencyInjectionTest {
     
     @Test
-    public void shouldReturnMySQLDatabase() {
+    public void shouldMySQLWhenConnect() {
         String expected = "Connect in MySQL.";
         String actual = DatabaseFactory.createMySQL().connect();
         assertEquals(expected, actual);
     }
     
     @Test
-    public void shouldReturnPostgreSQLDatabase() {
+    public void shouldPostgreSQLWhenConnect() {
         String expected = "Connect in PostgreSQL.";
         String actual = DatabaseFactory.createPostgreSQL().connect();
         assertEquals(expected, actual);
