@@ -1,9 +1,6 @@
 package DependencyInjection;
 
 import DependencyInjection.Database.DatabaseFactory;
-import DependencyInjection.Database.Provider;
-import DependencyInjection.Database.Providers.MySQL;
-import DependencyInjection.Database.Providers.PostgreSQL;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
