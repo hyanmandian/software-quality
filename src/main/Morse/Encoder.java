@@ -1,5 +1,6 @@
 package Morse;
 
+import Morse.Dictionaries.PT;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
@@ -13,25 +14,21 @@ public class Encoder {
         .mapToObj(e->(char)e)
         .collect(Collectors.toList());
         
-        return (String) letters
+        return letters
         .stream()
         .reduce("", (prev, current) -> {
-            String result = (String) Dictionary.values()
-            .entrySet()
-            .stream()
+            return Arrays.stream(PT.values())
             .filter(code -> {
-                String currentCode = ((Map.Entry<String, String>)code)
-                .getKey()
-                .toString();
+                String expected = current.toString();
+                String actual = code.getKey().toString();
                 
-                boolean result = current.toString().equals(currentCode);
-                return false;
+                return expected.equals(actual);
             })
             .findFirst()
-            .orElse(null);
-            
-            return result;
-        });
+            .orElseThrow(() -> new IllegalStateException(String.format("Unsupported type %s.", current)))
+            .getValue();
+        })
+        .toString();
     }
     
     public static void main(String[] args) {
