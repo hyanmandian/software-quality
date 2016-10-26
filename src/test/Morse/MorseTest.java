@@ -11,7 +11,6 @@ public class MorseTest {
         String expected = ".- -... -.-. -.. . ..-. --. ... .. .--- -.- .-.. -- -. --- .--. --.- .-. ... - ..- ...- .-- -..- -.-- --.. .---- ..--- ...-- ....- ..... -.... --... ---.. ----. -----";
         String actual = Morse.encode("ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890");
         
-        System.out.print(expected + "  " + actual);
         assertEquals(expected, actual);
     }
     

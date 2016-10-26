@@ -1,6 +1,11 @@
 package Morse.Dictionaries;
 
 import Morse.Dictionary;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Stream;
 
 public enum PT implements Dictionary {
 
@@ -40,7 +45,7 @@ public enum PT implements Dictionary {
     CODE8("8", "---.."),
     CODE9("9", "----."),
     CODE0("0", "-----");
-
+    
     private String key;
     private String value;
 
@@ -57,5 +62,10 @@ public enum PT implements Dictionary {
     @Override
     public String getValue() {
         return value;
+    }
+    
+    @Override
+    public Stream getValues() {
+        return Arrays.stream(PT.values());
     }
 }
